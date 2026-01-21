@@ -100,8 +100,8 @@ Blitz request is published to the redis channel
 ```json
 {
   "action": "PLACE_ORDER",
-  "TpomsName": "Zerodha",
-  "UserID": "ABC123",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
   "Data": {
       "Account":"Test123",
       "ExchangeClientID": "CLIENT_01",
@@ -212,8 +212,8 @@ The response is then processed and then converted to blitz format
 ```json 
 {
   "MessageType": "PLACE_ORDER",
-  "TpomsName": "Zerodha",
-  "UserID": "ABC123",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
     "Data": {
         "SequenceNumber": 0,
         "Account": "Test123",
@@ -279,8 +279,8 @@ The response is then processed and then converted to blitz format
 ```json
 {
   "action": "MODIFY_ORDER",
-  "TpomsName": "Zerodha",
-  "UserID": "ABC123",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
   "Data": {
     "Account": "Test123",
     "ExchangeClientID": "CLIENT_01",
@@ -348,8 +348,8 @@ The response is then processed and then converted to blitz format
 ```json
 {
   "MessageType": "MODIFY_ORDER",
-  "TpomsName": "Zerodha",
-  "UserID": "ABC123",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
   "Data": {
         "SequenceNumber": 0,
         "Account": "Test123",
@@ -391,8 +391,8 @@ The response is then processed and then converted to blitz format
 ```json
 {
     "action": "CANCEL_ORDER",
-    "TpomsName": "Zerodha",
-    "UserID": "ABC123",
+    "tpOmsName": "Zerodha",
+    "user_id": "ABC123",
     "Data": {
         "Account": "TRADING456",
         "ExchangeClientID": "CLIENT_789",
@@ -456,8 +456,8 @@ The response is then processed and then converted to blitz format
 ```json
 {
   "MessageType": "CANCEL_ORDER",
-  "TpomsName": "Zerodha",
-  "UserID": "ABC123",
+  "tpOmsName": "Zerodha",
+  "user_id": "ABC123",
   "Data": {
         "SequenceNumber": 0,
         "Account": "TRADING456",
