@@ -288,9 +288,10 @@ The response is then processed and then converted to blitz format
     "ExchangeClientID": "CLIENT_01",
     "ExchangeSegment": "NSE",
     "ExchangeInstrumentID": 1234,
-    "ExcahngeInstrumnetName" : "IDEA",
+    "SymbolName": "IDEA",
+    "ExcahngeInstrumnetName" : "VODAFONE IDEA LIMITED",
     "ModifiedProductType": "NRML",
-    "ModifiedOrdertype": "LIMIT",
+    "ModifiedOrderType": "LIMIT",
     "ModifiedTimeInForce": "IOC",
     "ModifiedDisclosedQuantity": 10,
     "ModifiedOrderQuantity": 150,
@@ -299,7 +300,7 @@ The response is then processed and then converted to blitz format
     "LeavesQuantity": 50,
     "CumulativeQuantity": 100,
     "LastOrderModifiedTime": "2026-01-08 15:23:46",
-    "BlitzAooOrderID": 1234567891,
+    "BlitzAppOrderID": 1234567891,
     "ExchangeOrderID": "EXCH_ORD_987654",
     "UserLoginName": "harshit"
   }
