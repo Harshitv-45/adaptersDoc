@@ -107,6 +107,8 @@ Blitz request is published to the redis channel
       "ExchangeClientID": "CLIENT_01",
       "ExchangeSegment": "NSE",
       "ExchangeInstrumentID": 1234,
+      "SymbolName": "IDEA",
+      "ExchangeInstrumentName": "VODAFONE IDEA LIMITED",
       "ProductType": "MIS",
       "OrderType": "LIMIT",
       "OrderSide": "BUY",
@@ -150,7 +152,7 @@ The request is then processed with the blitz_to_zerodha function which convert i
 | Blitz Field.           | Zerodha Field        |
 |------------------------|----------------------|
 | ExchangeSegment        | exchange             |
-| ExchangeInstrumentID   | tradingsymbol        |
+| SymbolName             | tradingsymbol        |
 | OrderSide              | transaction_type     |
 | OrderType              | order_type           |
 | OrderQuantity          | quantity             |
