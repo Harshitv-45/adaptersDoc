@@ -105,7 +105,7 @@ Blitz request is published to the redis channel
   "Data": {
       "Account":"Test123",
       "ExchangeClientID": "CLIENT_01",
-      "ExchangeSegment": "NSE",
+      "ExchangeSegment": "NSECM",
       "ExchangeInstrumentID": 1234,
       "SymbolName": "IDEA",
       "ExchangeInstrumentName": "VODAFONE IDEA LIMITED",
@@ -312,7 +312,7 @@ The response is then processed and then converted to blitz format
   "Data": {
     "Account": "Test123",
     "ExchangeClientID": "CLIENT_01",
-    "ExchangeSegment": "NSE",
+    "ExchangeSegment": "NSECM",
     "ExchangeInstrumentID": 1234,
     "SymbolName": "IDEA",
     "ExcahngeInstrumnetName" : "VODAFONE IDEA LIMITED",
@@ -425,7 +425,7 @@ The response is then processed and then converted to blitz format
     "Data": {
         "Account": "TRADING456",
         "ExchangeClientID": "CLIENT_789",
-        "ExchangeSegment": "NSE",
+        "ExchangeSegment": "NSECM",
         "ExchangeInstrumentID": 3677697,
         "SymbolName": "NIFTY",
         "ExchangeInstrumentName": "IDEA",

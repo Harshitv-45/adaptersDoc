@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../blitz_order_requests/">
+      
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -16,7 +18,7 @@
     
     
       
-        <title>Zerodha Adapter Documentation - Blitz Broker Adapter Documentation</title>
+        <title>Zerodha Update - Blitz Broker Adapter Documentation</title>
       
     
     
@@ -95,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Zerodha Adapter Documentation
+              Zerodha Update
             
           </span>
         </div>
@@ -253,10 +255,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../zerodha_update/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Zerodha Update
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -267,6 +291,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-create-a-zerodha-developer-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Create a Zerodha Developer Account
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-get-api-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Get API Credentials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-generate-zerodha-login-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Generate Zerodha Login URL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-receive-request-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Receive Request Token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-generate-access-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Generate Access Token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-flow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Flow Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -462,13 +569,15 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;TpomsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;UserID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ExchangeInstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VODAFONE IDEA LIMITED&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
@@ -486,6 +595,96 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Account</td>
+<td>Trading account identifier</td>
+</tr>
+<tr>
+<td>ExchangeClientID</td>
+<td>Client ID</td>
+</tr>
+<tr>
+<td>ExchangeSegment</td>
+<td>Exchange segment <code>NSECM</code>, <code>BSECM</code>, <code>NSEFO</code>,<code>BSEFO</code></td>
+</tr>
+<tr>
+<td>ExchangeInstrumentID</td>
+<td>Unique instrument ID at exchange</td>
+</tr>
+<tr>
+<td>SymbolName</td>
+<td>Tradable symbol</td>
+</tr>
+<tr>
+<td>ExchangeInstrumentName</td>
+<td>Full instrument/company name</td>
+</tr>
+<tr>
+<td>ProductType</td>
+<td>Order product type <code>CNC</code>, <code>NRML</code>, <code>MIS</code>, <code>MFT</code>.</td>
+</tr>
+<tr>
+<td>OrderType</td>
+<td>Type of order  <code>MARKET</code>, <code>LIMIT</code>, <code>SL</code>, <code>SL-M</code></td>
+</tr>
+<tr>
+<td>OrderSide</td>
+<td>Buy or Sell direction <code>BUY</code>, <code>SELL</code></td>
+</tr>
+<tr>
+<td>TimeInForce</td>
+<td>Order validity <code>DAY</code>, <code>IOC</code></td>
+</tr>
+<tr>
+<td>DisclosedQuantity</td>
+<td>Quantity disclosed to exchange</td>
+</tr>
+<tr>
+<td>OrderQuantity</td>
+<td>Total order quantity</td>
+</tr>
+<tr>
+<td>LimitPrice</td>
+<td>Limit price (required for LIMIT orders)</td>
+</tr>
+<tr>
+<td>StopPrice</td>
+<td>Trigger price for stop-loss orders</td>
+</tr>
+<tr>
+<td>BlitzAppOrderID</td>
+<td>Unique order ID generated by Blitz</td>
+</tr>
+<tr>
+<td>AlgoID</td>
+<td>Algorithm identifier</td>
+</tr>
+<tr>
+<td>AlgoCategory</td>
+<td>Strategy category</td>
+</tr>
+<tr>
+<td>UserExcahngeProperty_KeyInfo2</td>
+<td>Custom user/exchange-specific metadata</td>
+</tr>
+<tr>
+<td>UserLoginName</td>
+<td>Logged-in user name</td>
+</tr>
+<tr>
+<td>IsFictiveorder</td>
+<td>Indicates simulated or paper order</td>
+</tr>
+</tbody>
+</table>
 <p>The request is then processed with the blitz_to_zerodha function which convert it to the zerodha payload </p>
 <p><strong>Zerodha Payload</strong> -&gt; Place Order</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -501,6 +700,57 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">  </span><span class="nt">&quot;validity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
+<p><strong>Blitz &lt;-&gt; Zerodha Mapping</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blitz Field.</th>
+<th>Zerodha Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExchangeSegment</td>
+<td>exchange</td>
+</tr>
+<tr>
+<td>SymbolName</td>
+<td>tradingsymbol</td>
+</tr>
+<tr>
+<td>OrderSide</td>
+<td>transaction_type</td>
+</tr>
+<tr>
+<td>OrderType</td>
+<td>order_type</td>
+</tr>
+<tr>
+<td>OrderQuantity</td>
+<td>quantity</td>
+</tr>
+<tr>
+<td>ProductType</td>
+<td>product</td>
+</tr>
+<tr>
+<td>LimitPrice</td>
+<td>price</td>
+</tr>
+<tr>
+<td>StopPrice</td>
+<td>trigger_price</td>
+</tr>
+<tr>
+<td>DisclosedQuantity</td>
+<td>disclosed_quantity</td>
+</tr>
+<tr>
+<td>TimeInForce</td>
+<td>validity</td>
+</tr>
+</tbody>
+</table>
 <p>After calling the zerodha API with the payload zerodha send the response in the below format</p>
 <p><strong>Zerodha Websocket Raw Response (Order status is Open)</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -539,231 +789,125 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">  </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1767866026-514556-RGZ539-ADMINAPI&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="zerodha-to-blitz-conversion">Zerodha to Blitz Conversion</h1>
+<p>Zerodha to Blitz Conversion</p>
 <p>The response is then processed and then converted to blitz format </p>
 <p><strong>Blitz Response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;message_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_UPDATE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;EntityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;BlitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID_11&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEW&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;TIF&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;AverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;IsOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;UserText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;CorrelationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4576347291</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEW&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="zerodha-to-blitz-order">Zerodha to Blitz Order</h2>
+<p><strong>Mapping of zerdha to blitz</strong></p>
 <table>
 <thead>
 <tr>
 <th>Zerodha Field</th>
-<th>Zerodha Key</th>
 <th>Blitz Field</th>
-<th>Blitz Key</th>
-<th>Example Value</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Order ID</td>
-<td><code>order_id</code></td>
-<td>Blitz Order ID</td>
-<td><code>BlitzOrderId</code></td>
-<td><code>260108152046774</code> → <code>BOID_11</code></td>
-<td>Blitz-generated or mapped</td>
+<td>exchange_order_id</td>
+<td>ExchangeOrderID</td>
 </tr>
 <tr>
-<td>Exchange Order ID</td>
-<td><code>exchange_order_id</code></td>
-<td>Exchange Order ID</td>
-<td><code>ExchangeOrderId</code></td>
-<td><code>1100000084582744</code></td>
-<td>Direct mapping</td>
+<td>exchange</td>
+<td>ExchangeSegment</td>
 </tr>
 <tr>
-<td>Instrument Token</td>
-<td><code>instrument_token</code></td>
-<td>Instrument ID</td>
-<td><code>InstrumentId</code></td>
-<td><code>3677697</code></td>
-<td>Direct mapping</td>
+<td>instrument_token</td>
+<td>ExchangeInstrumentID</td>
 </tr>
 <tr>
-<td>Trading Symbol</td>
-<td><code>tradingsymbol</code></td>
-<td>Instrument Name</td>
-<td><code>InstrumentName</code></td>
-<td><code>IDEA</code></td>
-<td>Direct mapping</td>
+<td>transaction_type</td>
+<td>OrderSide</td>
 </tr>
 <tr>
-<td>Exchange</td>
-<td><code>exchange</code></td>
-<td>Exchange Segment</td>
-<td><code>ExchangeSegment</code></td>
-<td><code>NSE</code></td>
-<td>Direct mapping</td>
+<td>order_type</td>
+<td>OrderType</td>
 </tr>
 <tr>
-<td>Transaction Type</td>
-<td><code>transaction_type</code></td>
-<td>Order Side</td>
-<td><code>OrderSide</code></td>
-<td><code>BUY</code></td>
-<td>BUY / SELL</td>
+<td>product</td>
+<td>ProductType</td>
 </tr>
 <tr>
-<td>Order Type</td>
-<td><code>order_type</code></td>
-<td>Order Type</td>
-<td><code>OrderType</code></td>
-<td><code>LIMIT</code></td>
-<td>Direct mapping</td>
+<td>validity</td>
+<td>TimeInForce</td>
 </tr>
 <tr>
-<td>Order Status</td>
-<td><code>status</code></td>
-<td>Order Status</td>
-<td><code>OrderStatus</code></td>
-<td><code>OPEN</code> → <code>NEW</code></td>
-<td>Status mapping applied</td>
+<td>price</td>
+<td>OrderPrice</td>
 </tr>
 <tr>
-<td>Quantity</td>
-<td><code>quantity</code></td>
-<td>Order Quantity</td>
-<td><code>OrderQuantity</code></td>
-<td><code>1</code></td>
-<td>Direct mapping</td>
+<td>quantity</td>
+<td>OrderQuantity</td>
 </tr>
 <tr>
-<td>Price</td>
-<td><code>price</code></td>
-<td>Order Price</td>
-<td><code>OrderPrice</code></td>
-<td><code>11.35</code></td>
-<td>Direct mapping</td>
+<td>trigger_price</td>
+<td>OrderStopPrice</td>
 </tr>
 <tr>
-<td>Trigger Price</td>
-<td><code>trigger_price</code></td>
-<td>Order Trigger Price</td>
-<td><code>OrderTriggerPrice</code></td>
-<td><code>0</code></td>
-<td>SL orders</td>
+<td>status</td>
+<td>OrderStatus</td>
 </tr>
 <tr>
-<td>Average Price</td>
-<td><code>average_price</code></td>
-<td>Average Traded Price</td>
-<td><code>AverageTradedPrice</code></td>
-<td><code>0.0</code></td>
-<td>Default when no trade</td>
+<td>average_price</td>
+<td>OrderAverageTradedPrice</td>
 </tr>
 <tr>
-<td>Filled Quantity</td>
-<td><code>filled_quantity</code></td>
-<td>Last Traded Quantity</td>
-<td><code>LastTradedQuantity</code></td>
-<td><code>0</code></td>
-<td>Updated on trade</td>
+<td>pending_quantity</td>
+<td>LeavesQuantity</td>
 </tr>
 <tr>
-<td>Pending Quantity</td>
-<td><code>pending_quantity</code></td>
-<td>Leaves Quantity</td>
-<td><code>LeavesQuantity</code></td>
-<td><code>1</code></td>
-<td>Remaining qty</td>
+<td>filled_quantity</td>
+<td>CumulativeQuantity</td>
 </tr>
 <tr>
-<td>Disclosed Quantity</td>
-<td><code>disclosed_quantity</code></td>
-<td>Order Disclosed Quantity</td>
-<td><code>OrderDisclosedQuantity</code></td>
-<td><code>0</code></td>
-<td>Usually zero</td>
+<td>disclosed_quantity</td>
+<td>OrderDisclosedQuantity</td>
 </tr>
 <tr>
-<td>Validity</td>
-<td><code>validity</code></td>
-<td>Time In Force</td>
-<td><code>TIF</code></td>
-<td><code>DAY</code></td>
-<td>DAY / IOC</td>
+<td>order_timestamp</td>
+<td>OrderGeneratedDateTime</td>
 </tr>
 <tr>
-<td>Exchange Timestamp</td>
-<td><code>exchange_timestamp</code></td>
-<td>Exchange Transact Time</td>
-<td><code>ExchangeTransactTime</code></td>
-<td><code>2026-01-08 15:23:46</code></td>
-<td>Exchange time</td>
+<td>exchange_timestamp</td>
+<td>ExchangeTransactTime</td>
 </tr>
 <tr>
-<td>Completion Flag</td>
-<td>derived</td>
-<td>Is Order Completed</td>
-<td><code>IsOrderCompleted</code></td>
-<td><code>false</code></td>
-<td>Derived from status</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="zerodha-blitz-status-mapping">Zerodha → Blitz Status Mapping</h2>
-<table>
-<thead>
-<tr>
-<th>Zerodha Status</th>
-<th>Blitz Status</th>
-<th>IsOrderCompleted</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>OPEN</code></td>
-<td><code>NEW</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>COMPLETE</code></td>
-<td><code>FILLED</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>CANCELLED</code></td>
-<td><code>CANCELLED</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>REJECTED</code></td>
-<td><code>REJECTED</code></td>
-<td><code>true</code></td>
+<td>exchange_update_timestamp</td>
+<td>LastUpdateDateTime</td>
 </tr>
 </tbody>
 </table>
@@ -771,15 +915,17 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;UserID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExcahngeInstrumnetName&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExcahngeInstrumnetName&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VODAFONE IDEA LIMITED&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ModifiedProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NRML&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ModifiedOrdertype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedOrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ModifiedTimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IOC&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ModifiedDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ModifiedOrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
@@ -788,7 +934,7 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;LastOrderModifiedTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;BlitzAooOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCH_ORD_987654&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;UserLoginName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;harshit&quot;</span>
 <span class="w">  </span><span class="p">}</span>
@@ -817,13 +963,13 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">  </span><span class="nt">&quot;transaction_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;validity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;disclosed_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;disclosed_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;trigger_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;filled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;pending_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;pending_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;cancelled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;market_protection&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
@@ -831,119 +977,67 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">  </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;205871XvWfpJkFLquRq&quot;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RGZ539&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;unfilled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;checksum&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;placed_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RGZ539&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;260108152046774&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;parent_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OPEN&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_message_raw&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;order_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange_update_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;variety&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regular&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tradingsymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrument_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;order_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;transaction_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;validity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;disclosed_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;trigger_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;filled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;pending_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;cancelled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;market_protection&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1767866026-514556-RGZ539-ADMINAPI&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
 <p><strong>Blitz Response</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;message_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_UPDATE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;EntityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;BlitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID_07&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UPDATE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;TIF&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;AverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;IsOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;UserText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;CorrelationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REPLACED&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+
+
 <span class="p">}</span>
 </code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;message_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_UPDATE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;EntityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;BlitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID_07&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEW&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;TIF&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;AverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;IsOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;UserText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;CorrelationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
 <h2 id="cancel-order">Cancel Order</h2>
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;BlitzOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID_07&quot;</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRADING456&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_789&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NIFTY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeInstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CummulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastOrderModifiedTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-20 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4058284572</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE_ORD_1234567&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;UserLoginName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;harshit&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Zerodha Response</strong>
+<p><strong>Zerodha Response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RGZ539&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;unfilled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -966,121 +1060,55 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">  </span><span class="nt">&quot;transaction_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;validity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;disclosed_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;trigger_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;filled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;pending_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;cancelled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;market_protection&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1767866026-514556-RGZ539-ADMINAPI&quot;</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;account_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RGZ539&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;unfilled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;checksum&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;placed_by&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RGZ539&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;260108152046774&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;parent_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCELLED&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status_message_raw&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;order_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange_update_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange_timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;variety&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regular&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;exchange&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tradingsymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;instrument_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;order_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;transaction_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;validity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;disclosed_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;trigger_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;average_price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;filled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;pending_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;cancelled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;cancelled_quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;market_protection&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
 <span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;guid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1767866037-597794-RGZ539-ADMINAPI&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Blitz Response</strong>
+<p><strong>Blitz Response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;message_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_UPDATE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;EntityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;BlitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID_07&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCELLED&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;TIF&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;AverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;IsOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;UserText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;CorrelationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRADING456&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_789&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4058284572</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCELLED&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;message_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_UPDATE&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;EntityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;InstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;BlitzOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID_07&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCELLED&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.35</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderTriggerPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;TIF&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:57&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;AverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;IsOrderCompleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;UserText&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;ExecutionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;CorrelationOrderId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">  </span><span class="p">}</span>
+
 <span class="p">}</span>
 </code></pre></div>
 
