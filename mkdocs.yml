@@ -13,7 +13,6 @@ nav:
   - Blitz Adapter Structure: blitz_adapter_structure.md
   - Blitz Order Requests: blitz_order_requests.md
   - Zerodha Update: zerodha_update.md
-  - Zerodha: zerodha.md
 
 extra_css:
   - css/custom.css
