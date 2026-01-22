@@ -131,14 +131,14 @@ Blitz request is published to the redis channel
 |-----------------------------------|-----------------------------------------------------------------|
 | Account                           | Trading account identifier                                      |
 | ExchangeClientID                  | Client ID                                                       |
-| ExchangeSegment                   | Exchange segment `NSE`                                          |
+| ExchangeSegment                   | Exchange segment `NSECM`, `BSECM`, `NSEFO`,`BSEFO`              |
 | ExchangeInstrumentID              | Unique instrument ID at exchange                                |
 | SymbolName                        | Tradable symbol                                                 |
 | ExchangeInstrumentName            | Full instrument/company name                                    |
-| ProductType                       | Order product type                                              |
-| OrderType                         | Type of order                                                   |
-| OrderSide                         | Buy or Sell direction                                           |
-| TimeInForce                       | Order validity                                                  |
+| ProductType                       | Order product type `CNC`, `NRML`, `MIS`, `MFT`.                 |
+| OrderType                         | Type of order  `MARKET`, `LIMIT`, `SL`, `SL-M`                  |
+| OrderSide                         | Buy or Sell direction `BUY`, `SELL`                             |
+| TimeInForce                       | Order validity `DAY`, `IOC`                                     |
 | DisclosedQuantity                 | Quantity disclosed to exchange                                  |
 | OrderQuantity                     | Total order quantity                                            |
 | LimitPrice                        | Limit price (required for LIMIT orders)                         |
