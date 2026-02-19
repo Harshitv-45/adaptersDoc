@@ -41,50 +41,35 @@ After creating the app, Zerodha will provide:
 
 ---
 
-## Step 3: Generate Zerodha Login URL
+## Step 3: Generate TOTP Secret
 
-Using the **API Key** and **API Secret**, generate a Zerodha login URL.
-The login URL looks like `https://kite.zerodha.com/connect/login?v=3&api_key=2i8ayyawr7dptt24h`
+Login to the zerodha dashboard using the link [Zerodha Login](https://kite.zerodha.com/)
 
-- Share this login URL with the client
-- The client must log in using their Zerodha credentials
+- Go to Password & Security at the top right corner of of your dashboard
+![Password and securtiy](./assets/zerodha/password%20and%20security.png)
 
----
+- Enable 2FA TOTP
+![External 2FA TOTP enable](./assets/zerodha/external%202FA%20TOTP%201.png)
 
-## Step 4: Receive Request Token
+- Download google authenticator app on your mobile and before scanning the QR code click on "Can't Scan? Copy the Code" at the bottom of the QR Code, and save the text this is your TOTP Secret
+![Get TOTP Secret](./assets/zerodha/external%202FA%20TOTP.png) 
 
-1. After successful login, Zerodha redirects the user to the configured callback URL
-2. The redirect URL contains a **request_token** as a query parameter
-3. Copy the `request_token`
 
-> ⚠️ The request token is short-lived and must be used immediately.
 
 ---
 
-## Step 5: Generate Access Token
+## Step 4: Fill all the credentials in the TPOMS
 
-Using the following details:
+After successfully generating all the credentials like 
+  - API Key
+  - API Secret
+  - TOTP Secret
 
-- API Key
-- API Secret
-- Request Token
-- Zerodha User ID
+Login in to TPOMS
+![TPOMS LOGIN](./assets/zerodha/TPOMS.png)
 
-Generate the **Access Token**.
-
-Once the access token is generated, the Zerodha account is successfully connected to Blitz.
-
----
-
-## Authentication Flow Summary
-
-1. Create Zerodha developer account  
-2. Create app → get API Key & API Secret  
-3. Generate login URL  
-4. User logs in to Zerodha  
-5. Receive request token  
-6. Exchange request token for access token  
-7. Zerodha connected to Blitz ✅  
+Click the Connect button and you are connected
+ 
 
 ---
 
@@ -99,9 +84,10 @@ Blitz request is published to the redis channel
 
 ```json
 {
-  "action": "PLACE_ORDER",
-  "tpOmsName": "Zerodha",
-  "user_id": "ABC123",
+  "Action": "PLACE_ORDER",
+  "TPOmsName": "Zerodha",
+  "UserId": "ABC123",
+  "UserName": "Harshit",
   "Data": {
       "Account":"Test123",
       "ExchangeClientID": "CLIENT_01",
@@ -120,8 +106,6 @@ Blitz request is published to the redis channel
       "BlitzAppOrderID": 4576347291,
       "AlgoID": "MOMENTUM_V1",
       "AlgoCategory": "INTRADAY",
-      "UserExcahngeProperty_KeyInfo2": "ADDITIONAL_INFO",
-      "UserLoginName":"harshit",
       "IsFictiveorder": "False"
     }
 }
@@ -131,29 +115,27 @@ Blitz request is published to the redis channel
 |-----------------------------------|-----------------------------------------------------------------|
 | Account                           | Trading account identifier                                      |
 | ExchangeClientID                  | Client ID                                                       |
-| ExchangeSegment                   | Exchange segment `NSECM`, `BSECM`, `NSEFO`,`BSEFO`              |
+| ExchangeSegment                   | Exchange segment `NSECM`, `NSEFO`                               |
 | ExchangeInstrumentID              | Unique instrument ID at exchange                                |
-| SymbolName                        | Tradable symbol                                                 |
-| ExchangeInstrumentName            | Full instrument/company name                                    |
-| ProductType                       | Order product type `CNC`, `NRML`, `MIS`, `MFT`.                 |
-| OrderType                         | Type of order  `MARKET`, `LIMIT`, `SL`, `SL-M`                  |
+| SymbolName                        | Trading symbol                                                  |
+| ExchangeInstrumentName            | Full instrument                                                 |
+| ProductType                       | Order product type `ALL`, `NONE`, `CNC`, `NRML`, `MIS`, `MFT`   |
+| OrderType                         | Type of order  `MARKET`, `LIMIT`, `STOPLIMIT`, `SL-M`           |
 | OrderSide                         | Buy or Sell direction `BUY`, `SELL`                             |
 | TimeInForce                       | Order validity `DAY`, `IOC`                                     |
-| DisclosedQuantity                 | Quantity disclosed to exchange                                  |
+| DisclosedQuantity                 | Quantity to be disclosed to the market                          |
 | OrderQuantity                     | Total order quantity                                            |
 | LimitPrice                        | Limit price (required for LIMIT orders)                         |
 | StopPrice                         | Trigger price for stop-loss orders                              |
 | BlitzAppOrderID                   | Unique order ID generated by Blitz                              |
 | AlgoID                            | Algorithm identifier                                            |
-| AlgoCategory                      | Strategy category                                               |
-| UserExcahngeProperty_KeyInfo2     | Custom user/exchange-specific metadata                          |
-| UserLoginName                     | Logged-in user name                                             |
-| IsFictiveorder                    | Indicates simulated or paper order                              |
+| AlgoCategory                      | Category of algorithm used                                      |
+| IsFictiveorder                    | `TRUE`, `FALSE`                                                 |
 
 
 
 
-The request is then processed with the blitz_to_zerodha function which convert it to the zerodha payload 
+The request is then processed with the `to_zerodha` function which convert it to the zerodha payload 
 
 **Zerodha Payload** -> Place Order
 
@@ -239,10 +221,6 @@ The response is then processed and then converted to blitz format
 
 ```json 
 {
-  "MessageType": "PLACE_ORDER",
-  "tpOmsName": "Zerodha",
-  "user_id": "ABC123",
-    "Data": {
         "SequenceNumber": 0,
         "Account": "Test123",
         "ExchangeClientID": "CLIENT_01",
@@ -272,7 +250,6 @@ The response is then processed and then converted to blitz format
         "ExecutionID": ""
     }
 
-}
 ```
 
 **Mapping of zerdha to blitz**
@@ -306,9 +283,10 @@ The response is then processed and then converted to blitz format
 
 ```json
 {
-  "action": "MODIFY_ORDER",
-  "tpOmsName": "Zerodha",
-  "user_id": "ABC123",
+  "Action": "MODIFY_ORDER",
+  "TPOmsName": "Zerodha",
+  "UserId": "ABC123",
+  "UserName": "Harshit",
   "Data": {
     "Account": "Test123",
     "ExchangeClientID": "CLIENT_01",
@@ -328,7 +306,6 @@ The response is then processed and then converted to blitz format
     "LastOrderModifiedTime": "2026-01-08 15:23:46",
     "BlitzAppOrderID": 1234567891,
     "ExchangeOrderID": "EXCH_ORD_987654",
-    "UserLoginName": "harshit"
   }
 }
 ```
@@ -376,10 +353,6 @@ The response is then processed and then converted to blitz format
 **Blitz Response**
 ```json
 {
-  "MessageType": "MODIFY_ORDER",
-  "tpOmsName": "Zerodha",
-  "user_id": "ABC123",
-  "Data": {
         "SequenceNumber": 0,
         "Account": "Test123",
         "ExchangeClientID": "CLIENT_01",
@@ -406,11 +379,11 @@ The response is then processed and then converted to blitz format
         "LastTradedPrice": 0,
         "LastTradedQuantity": 0,
         "LastExecutionTransactTime": null,
-        "ExecutionID": ""
+        "ExecutionID": "260108152046774"
 }
 
 
-}
+
 ```
 
 ## Cancel Order
