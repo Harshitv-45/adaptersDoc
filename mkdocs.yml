@@ -12,6 +12,7 @@ nav:
   - Home: index.md
   - Requests & Response : blitz_order_requests.md
   - Zerodha: zerodha.md
+  - Motilal: motilal.md
 
 extra_css:
   - css/custom.css

@@ -37,7 +37,7 @@ The adapter must not contain trading or strategy logic.
 
 ---
 
-## High-Level Architecture
+## Architecture
 
 ```
 Blitz → Redis → Adapter → Broker API
