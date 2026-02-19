@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="blitz_adapter_structure/">
+        <link rel="next" href="blitz_order_requests/">
       
       
       <link rel="icon" href="assets/favicon.ico">
@@ -18,7 +18,7 @@
     
     
       
-        <title>Blitz Broker Adapter Documentation</title>
+        <title>Adapter Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Blitz Broker Adapter Documentation" class="md-header__button md-logo" aria-label="Blitz Broker Adapter Documentation" data-md-component="logo">
+    <a href="." title="Adapter Documentation" class="md-header__button md-logo" aria-label="Adapter Documentation" data-md-component="logo">
       
   <img src="assets/icon.png" alt="logo">
 
@@ -91,7 +91,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Broker Adapter Documentation
+            Adapter Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -175,12 +175,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Blitz Broker Adapter Documentation" class="md-nav__button md-logo" aria-label="Blitz Broker Adapter Documentation" data-md-component="logo">
+    <a href="." title="Adapter Documentation" class="md-nav__button md-logo" aria-label="Adapter Documentation" data-md-component="logo">
       
   <img src="assets/icon.png" alt="logo">
 
     </a>
-    Blitz Broker Adapter Documentation
+    Adapter Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -224,34 +224,12 @@
   
   
     <li class="md-nav__item">
-      <a href="blitz_adapter_structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Blitz Adapter Structure
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="blitz_order_requests/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Blitz Order Requests
+    Requests & Response
     
   </span>
   
@@ -273,7 +251,7 @@
   
   
   <span class="md-ellipsis">
-    Zerodha Update
+    Zerodha
     
   </span>
   
@@ -319,6 +297,136 @@
 
 <h1 id="blitz-broker-adapter-documentation">Blitz Broker Adapter Documentation</h1>
 <p>Welcome to the Blitz Broker Adapter documentation.</p>
+<hr />
+<h1 id="adapter-architecture-structure">Adapter Architecture &amp; Structure</h1>
+<h2 id="overview">Overview</h2>
+<p>The Adapter acts as a <strong>translation layer</strong> between Blitz and broker systems.</p>
+<p>It converts:</p>
+<ul>
+<li>Blitz requests → broker-specific API format</li>
+<li>Broker responses → standardized Blitz format</li>
+</ul>
+<p>This allows Blitz to work with multiple brokers using a unified interface.</p>
+<p>The adapter serves as a bridge between Blitz and external broker systems and ensures consistent communication.</p>
+<hr />
+<h2 id="adapter-responsibilities">Adapter Responsibilities</h2>
+<p>The adapter is responsible for:</p>
+<ul>
+<li>Request validation</li>
+<li>Request transformation</li>
+<li>Broker API communication</li>
+<li>Response normalization</li>
+<li>Error handling</li>
+<li>Publishing responses back to Blitz</li>
+<li>Maintaining standardized message format</li>
+</ul>
+<p>The adapter must not contain trading or strategy logic.</p>
+<hr />
+<h2 id="high-level-architecture">High-Level Architecture</h2>
+<div class="highlight"><pre><span></span><code>Blitz → Redis → Adapter → Broker API
+Broker → Adapter → Redis → Blitz
+</code></pre></div>
+<h3 id="flow-description">Flow Description</h3>
+<ol>
+<li>Blitz publishes order request.</li>
+<li>Adapter consumes request from Redis.</li>
+<li>Adapter converts request to broker format.</li>
+<li>Broker processes order.</li>
+<li>Adapter receives broker response.</li>
+<li>Adapter converts response to Blitz format.</li>
+<li>Adapter publishes standardized response.</li>
+</ol>
+<hr />
+<h2 id="adapter-components">Adapter Components</h2>
+<h3 id="1-request-listener">1. Request Listener</h3>
+<p>Subscribes to Redis channels and receives Blitz requests.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Message consumption</li>
+<li>Request validation</li>
+<li>Action routing</li>
+<li>Forward request to handler</li>
+</ul>
+<hr />
+<h3 id="2-request-mapper">2. Request Mapper</h3>
+<p>Converts Blitz request fields into broker API fields.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Field mapping</li>
+<li>Enum conversion</li>
+<li>Format transformation</li>
+<li>Payload construction</li>
+</ul>
+<hr />
+<h3 id="3-broker-client">3. Broker Client</h3>
+<p>Handles communication with broker APIs.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Order placement</li>
+<li>Order modification</li>
+<li>Order cancellation</li>
+<li>Authentication handling</li>
+<li>API request execution</li>
+</ul>
+<hr />
+<h3 id="4-websocket-event-listener">4. WebSocket / Event Listener</h3>
+<p>Receives broker order updates and execution events.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Subscribe to broker updates</li>
+<li>Receive execution events</li>
+<li>Forward raw responses to mapper</li>
+</ul>
+<hr />
+<h3 id="5-response-mapper">5. Response Mapper</h3>
+<p>Converts broker responses into Blitz standardized response format.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Field mapping</li>
+<li>Timestamp conversion</li>
+<li>Data validation</li>
+<li>Response construction</li>
+</ul>
+<hr />
+<h3 id="6-response-publisher">6. Response Publisher</h3>
+<p>Publishes standardized responses back to Blitz.</p>
+<p><strong>Responsibilities</strong></p>
+<ul>
+<li>Publish response messages</li>
+<li>Ensure message structure consistency</li>
+<li>Deliver events to Redis channel</li>
+</ul>
+<hr />
+<h2 id="order-processing-flow">Order Processing Flow</h2>
+<h3 id="place-order-flow">Place Order Flow</h3>
+<ol>
+<li>Blitz publishes <code>PLACE_ORDER</code> request.</li>
+<li>Adapter validates request.</li>
+<li>Request Mapper converts request to broker format.</li>
+<li>Broker Client sends request.</li>
+<li>Broker returns response.</li>
+<li>Response Mapper converts response.</li>
+<li>Response Publisher publishes result.</li>
+</ol>
+<hr />
+<h3 id="order-update-flow">Order Update Flow</h3>
+<ol>
+<li>Broker sends order update or execution event.</li>
+<li>Adapter receives update.</li>
+<li>Response Mapper converts update to Blitz format.</li>
+<li>Adapter publishes standardized response.</li>
+</ol>
+<hr />
+<h2 id="error-handling">Error Handling</h2>
+<p>The adapter must:</p>
+<ul>
+<li>Capture broker errors</li>
+<li>Handle failed API calls</li>
+<li>Normalize error responses</li>
+<li>Publish failure messages</li>
+<li>Maintain consistent response structure</li>
+</ul>
+<hr />
 
 
 

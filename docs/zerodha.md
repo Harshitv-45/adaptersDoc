@@ -73,7 +73,7 @@ Click the Connect button and you are connected
 
 ---
 
-# Blitz to Zerodha Conversion
+## Blitz to Zerodha Conversion
 
 Blitz request is published to the redis channel
 
@@ -490,5 +490,87 @@ The response is then processed and then converted to blitz format
         "ExecutionID": ""
   }
 
+}
+```
+
+# Rejected Order Scenarios
+
+This section describes failure responses returned when broker rejects an operation.
+
+## Place Order Rejected
+
+Occurs when broker rejects order placement due to validation failure, insufficient margin, invalid price, etc.
+
+### Blitz Response
+
+```json
+{
+  "SequenceNumber": 0,
+  "Account": "Test123",
+  "ExchangeClientID": "CLIENT_01",
+  "BlitzAppOrderID": 4576347291,
+  "ExchangeOrderID": "",
+  "ExchangeSegment": "NSE",
+  "ExchangeInstrumentID": 3677697,
+  "OrderSide": "BUY",
+  "OrderType": "LIMIT",
+  "ProductType": "MIS",
+  "TimeInForce": "DAY",
+  "OrderPrice": 11.25,
+  "OrderQuantity": 100,
+  "OrderStopPrice": 0,
+  "OrderStatus": "REJECTED",
+  "OrderAverageTradedPrice": 0,
+  "LeavesQuantity": 0,
+  "CumulativeQuantity": 0,
+  "OrderDisclosedQuantity": 0,
+  "OrderGeneratedDateTime": "2026-01-08 15:23:46",
+  "ExchangeTransactTime": null,
+  "LastUpdateDateTime": "2026-01-08 15:23:46",
+  "CancelRejectReason": "Insufficient margin",
+  "LastTradedPrice": 0,
+  "LastTradedQuantity": 0,
+  "LastExecutionTransactTime": null,
+  "ExecutionID": ""
+}
+```
+
+---
+
+## Modify Order Rejected (Replace Rejected)
+
+Occurs when broker rejects an order modification request.
+
+### Blitz Response
+
+```json
+{
+  "SequenceNumber": 0,
+  "Account": "Test123",
+  "ExchangeClientID": "CLIENT_01",
+  "BlitzAppOrderID": 1234567891,
+  "ExchangeOrderID": "1100000084582744",
+  "ExchangeSegment": "NSE",
+  "ExchangeInstrumentID": 3677697,
+  "OrderSide": "BUY",
+  "OrderType": "LIMIT",
+  "ProductType": "MIS",
+  "TimeInForce": "DAY",
+  "OrderPrice": 11.25,
+  "OrderQuantity": 100,
+  "OrderStopPrice": 0,
+  "OrderStatus": "Replace Rejected",
+  "OrderAverageTradedPrice": 0,
+  "LeavesQuantity": 100,
+  "CumulativeQuantity": 0,
+  "OrderDisclosedQuantity": 0,
+  "OrderGeneratedDateTime": "2026-01-08 15:23:46",
+  "ExchangeTransactTime": "2026-01-08 15:23:46",
+  "LastUpdateDateTime": "2026-01-08 15:24:10",
+  "CancelRejectReason": "Modification not allowed for completed order",
+  "LastTradedPrice": 0,
+  "LastTradedQuantity": 0,
+  "LastExecutionTransactTime": null,
+  "ExecutionID": ""
 }
 ```

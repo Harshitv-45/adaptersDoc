@@ -18,7 +18,7 @@
     
     
       
-        <title>Zerodha Update - Blitz Broker Adapter Documentation</title>
+        <title>Zerodha - Adapter Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Blitz Broker Adapter Documentation" class="md-header__button md-logo" aria-label="Blitz Broker Adapter Documentation" data-md-component="logo">
+    <a href=".." title="Adapter Documentation" class="md-header__button md-logo" aria-label="Adapter Documentation" data-md-component="logo">
       
   <img src="../assets/icon.png" alt="logo">
 
@@ -91,13 +91,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Broker Adapter Documentation
+            Adapter Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Zerodha Update
+              Zerodha
             
           </span>
         </div>
@@ -175,12 +175,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Blitz Broker Adapter Documentation" class="md-nav__button md-logo" aria-label="Blitz Broker Adapter Documentation" data-md-component="logo">
+    <a href=".." title="Adapter Documentation" class="md-nav__button md-logo" aria-label="Adapter Documentation" data-md-component="logo">
       
   <img src="../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Broker Adapter Documentation
+    Adapter Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -214,34 +214,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../blitz_adapter_structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Blitz Adapter Structure
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../blitz_order_requests/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Blitz Order Requests
+    Requests & Response
     
   </span>
   
@@ -272,7 +250,7 @@
   
   
   <span class="md-ellipsis">
-    Zerodha Update
+    Zerodha
     
   </span>
   
@@ -285,7 +263,7 @@
   
   
   <span class="md-ellipsis">
-    Zerodha Update
+    Zerodha
     
   </span>
   
@@ -335,36 +313,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-generate-zerodha-login-url" class="md-nav__link">
+  <a href="#step-3-generate-totp-secret" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Generate Zerodha Login URL
+      Step 3: Generate TOTP Secret
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-receive-request-token" class="md-nav__link">
+  <a href="#step-4-fill-all-the-credentials-in-the-tpoms" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Receive Request Token
+      Step 4: Fill all the credentials in the TPOMS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-generate-access-token" class="md-nav__link">
+  <a href="#blitz-to-zerodha-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 5: Generate Access Token
+      Blitz to Zerodha Conversion
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication-flow-summary" class="md-nav__link">
+  <a href="#place-order" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication Flow Summary
+      Place Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cancel Order
     </span>
   </a>
   
@@ -432,36 +428,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-generate-zerodha-login-url" class="md-nav__link">
+  <a href="#step-3-generate-totp-secret" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Generate Zerodha Login URL
+      Step 3: Generate TOTP Secret
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-receive-request-token" class="md-nav__link">
+  <a href="#step-4-fill-all-the-credentials-in-the-tpoms" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Receive Request Token
+      Step 4: Fill all the credentials in the TPOMS
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-generate-access-token" class="md-nav__link">
+  <a href="#blitz-to-zerodha-conversion" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 5: Generate Access Token
+      Blitz to Zerodha Conversion
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication-flow-summary" class="md-nav__link">
+  <a href="#place-order" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication Flow Summary
+      Place Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modify Order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cancel Order
     </span>
   </a>
   
@@ -523,54 +537,41 @@
 <p>⚠️ Keep these credentials secure. Do not expose them in public.</p>
 </blockquote>
 <hr />
-<h2 id="step-3-generate-zerodha-login-url">Step 3: Generate Zerodha Login URL</h2>
-<p>Using the <strong>API Key</strong> and <strong>API Secret</strong>, generate a Zerodha login URL.
-The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;api_key=2i8ayyawr7dptt24h</code></p>
+<h2 id="step-3-generate-totp-secret">Step 3: Generate TOTP Secret</h2>
+<p>Login to the zerodha dashboard using the link <a href="https://kite.zerodha.com/">Zerodha Login</a></p>
 <ul>
-<li>Share this login URL with the client</li>
-<li>The client must log in using their Zerodha credentials</li>
+<li>
+<p>Go to Password &amp; Security at the top right corner of of your dashboard
+<img alt="Password and securtiy" src="../assets/zerodha/password%20and%20security.png" /></p>
+</li>
+<li>
+<p>Enable 2FA TOTP
+<img alt="External 2FA TOTP enable" src="../assets/zerodha/external%202FA%20TOTP%201.png" /></p>
+</li>
+<li>
+<p>Download google authenticator app on your mobile and before scanning the QR code click on "Can't Scan? Copy the Code" at the bottom of the QR Code, and save the text this is your TOTP Secret
+<img alt="Get TOTP Secret" src="../assets/zerodha/external%202FA%20TOTP.png" /> </p>
+</li>
 </ul>
 <hr />
-<h2 id="step-4-receive-request-token">Step 4: Receive Request Token</h2>
-<ol>
-<li>After successful login, Zerodha redirects the user to the configured callback URL</li>
-<li>The redirect URL contains a <strong>request_token</strong> as a query parameter</li>
-<li>Copy the <code>request_token</code></li>
-</ol>
-<blockquote>
-<p>⚠️ The request token is short-lived and must be used immediately.</p>
-</blockquote>
+<h2 id="step-4-fill-all-the-credentials-in-the-tpoms">Step 4: Fill all the credentials in the TPOMS</h2>
+<p>After successfully generating all the credentials like 
+  - API Key
+  - API Secret
+  - TOTP Secret</p>
+<p>Login in to TPOMS
+<img alt="TPOMS LOGIN" src="../assets/zerodha/TPOMS.png" /></p>
+<p>Click the Connect button and you are connected</p>
 <hr />
-<h2 id="step-5-generate-access-token">Step 5: Generate Access Token</h2>
-<p>Using the following details:</p>
-<ul>
-<li>API Key</li>
-<li>API Secret</li>
-<li>Request Token</li>
-<li>Zerodha User ID</li>
-</ul>
-<p>Generate the <strong>Access Token</strong>.</p>
-<p>Once the access token is generated, the Zerodha account is successfully connected to Blitz.</p>
-<hr />
-<h2 id="authentication-flow-summary">Authentication Flow Summary</h2>
-<ol>
-<li>Create Zerodha developer account  </li>
-<li>Create app → get API Key &amp; API Secret  </li>
-<li>Generate login URL  </li>
-<li>User logs in to Zerodha  </li>
-<li>Receive request token  </li>
-<li>Exchange request token for access token  </li>
-<li>Zerodha connected to Blitz ✅  </li>
-</ol>
-<hr />
-<h1 id="blitz-to-zerodha-conversion">Blitz to Zerodha Conversion</h1>
+<h2 id="blitz-to-zerodha-conversion">Blitz to Zerodha Conversion</h2>
 <p>Blitz request is published to the redis channel</p>
 <h2 id="place-order">Place Order</h2>
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Harshit&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
@@ -589,8 +590,6 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">      </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4576347291</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;AlgoID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOMENTUM_V1&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;AlgoCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INTRADAY&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;UserExcahngeProperty_KeyInfo2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ADDITIONAL_INFO&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;UserLoginName&quot;</span><span class="p">:</span><span class="s2">&quot;harshit&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;IsFictiveorder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;False&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -613,7 +612,7 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 </tr>
 <tr>
 <td>ExchangeSegment</td>
-<td>Exchange segment <code>NSECM</code>, <code>BSECM</code>, <code>NSEFO</code>,<code>BSEFO</code></td>
+<td>Exchange segment <code>NSECM</code>, <code>NSEFO</code></td>
 </tr>
 <tr>
 <td>ExchangeInstrumentID</td>
@@ -621,19 +620,19 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 </tr>
 <tr>
 <td>SymbolName</td>
-<td>Tradable symbol</td>
+<td>Trading symbol</td>
 </tr>
 <tr>
 <td>ExchangeInstrumentName</td>
-<td>Full instrument/company name</td>
+<td>Full instrument</td>
 </tr>
 <tr>
 <td>ProductType</td>
-<td>Order product type <code>CNC</code>, <code>NRML</code>, <code>MIS</code>, <code>MFT</code>.</td>
+<td>Order product type <code>ALL</code>, <code>NONE</code>, <code>CNC</code>, <code>NRML</code>, <code>MIS</code>, <code>MFT</code></td>
 </tr>
 <tr>
 <td>OrderType</td>
-<td>Type of order  <code>MARKET</code>, <code>LIMIT</code>, <code>SL</code>, <code>SL-M</code></td>
+<td>Type of order  <code>MARKET</code>, <code>LIMIT</code>, <code>STOPLIMIT</code>, <code>SL-M</code></td>
 </tr>
 <tr>
 <td>OrderSide</td>
@@ -645,7 +644,7 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 </tr>
 <tr>
 <td>DisclosedQuantity</td>
-<td>Quantity disclosed to exchange</td>
+<td>Quantity to be disclosed to the market</td>
 </tr>
 <tr>
 <td>OrderQuantity</td>
@@ -669,23 +668,15 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 </tr>
 <tr>
 <td>AlgoCategory</td>
-<td>Strategy category</td>
-</tr>
-<tr>
-<td>UserExcahngeProperty_KeyInfo2</td>
-<td>Custom user/exchange-specific metadata</td>
-</tr>
-<tr>
-<td>UserLoginName</td>
-<td>Logged-in user name</td>
+<td>Category of algorithm used</td>
 </tr>
 <tr>
 <td>IsFictiveorder</td>
-<td>Indicates simulated or paper order</td>
+<td><code>TRUE</code>, <code>FALSE</code></td>
 </tr>
 </tbody>
 </table>
-<p>The request is then processed with the blitz_to_zerodha function which convert it to the zerodha payload </p>
+<p>The request is then processed with the <code>to_zerodha</code> function which convert it to the zerodha payload </p>
 <p><strong>Zerodha Payload</strong> -&gt; Place Order</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;tradingsymbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
@@ -793,10 +784,6 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <p>The response is then processed and then converted to blitz format </p>
 <p><strong>Blitz Response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
@@ -825,8 +812,6 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">        </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="w">    </span><span class="p">}</span>
-
-<span class="p">}</span>
 </code></pre></div>
 <p><strong>Mapping of zerdha to blitz</strong></p>
 <table>
@@ -914,9 +899,10 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <h2 id="modify-order">Modify Order</h2>
 <p><strong>Blitz Request</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Harshit&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
@@ -936,7 +922,6 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">    </span><span class="nt">&quot;LastOrderModifiedTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXCH_ORD_987654&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;UserLoginName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;harshit&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -979,10 +964,6 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 </code></pre></div></p>
 <p><strong>Blitz Response</strong>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;tpOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zerodha&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
@@ -1009,10 +990,7 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">        </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="p">}</span>
-
-
+<span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;260108152046774&quot;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="cancel-order">Cancel Order</h2>
@@ -1109,6 +1087,75 @@ The login URL looks like <code>https://kite.zerodha.com/connect/login?v=3&amp;ap
 <span class="w">        </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="rejected-order-scenarios">Rejected Order Scenarios</h1>
+<p>This section describes failure responses returned when broker rejects an operation.</p>
+<h2 id="place-order-rejected">Place Order Rejected</h2>
+<p>Occurs when broker rejects order placement due to validation failure, insufficient margin, invalid price, etc.</p>
+<h3 id="blitz-response">Blitz Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4576347291</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REJECTED&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Insufficient margin&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="modify-order-rejected-replace-rejected">Modify Order Rejected (Replace Rejected)</h2>
+<p>Occurs when broker rejects an order modification request.</p>
+<h3 id="blitz-response_1">Blitz Response</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1100000084582744&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replace Rejected&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:24:10&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Modification not allowed for completed order&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 

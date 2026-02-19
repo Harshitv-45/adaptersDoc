@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../blitz_adapter_structure/">
+        <link rel="prev" href="..">
       
       
         <link rel="next" href="../zerodha/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Blitz Order Requests - Blitz Broker Adapter Documentation</title>
+        <title>Requests & Response - Adapter Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#order-requests-documentation" class="md-skip">
+        <a href="#blitz-order-message-structure-requestresponse-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Blitz Broker Adapter Documentation" class="md-header__button md-logo" aria-label="Blitz Broker Adapter Documentation" data-md-component="logo">
+    <a href=".." title="Adapter Documentation" class="md-header__button md-logo" aria-label="Adapter Documentation" data-md-component="logo">
       
   <img src="../assets/icon.png" alt="logo">
 
@@ -93,13 +93,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Blitz Broker Adapter Documentation
+            Adapter Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blitz Order Requests
+              Requests & Response
             
           </span>
         </div>
@@ -177,12 +177,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Blitz Broker Adapter Documentation" class="md-nav__button md-logo" aria-label="Blitz Broker Adapter Documentation" data-md-component="logo">
+    <a href=".." title="Adapter Documentation" class="md-nav__button md-logo" aria-label="Adapter Documentation" data-md-component="logo">
       
   <img src="../assets/icon.png" alt="logo">
 
     </a>
-    Blitz Broker Adapter Documentation
+    Adapter Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -213,28 +213,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../blitz_adapter_structure/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Blitz Adapter Structure
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -247,202 +225,17 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Blitz Order Requests
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Blitz Order Requests
+    Requests & Response
     
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#redis-publishing-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Redis Publishing Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-request-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Request Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-place-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. PLACE ORDER
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. PLACE ORDER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action" class="md-nav__link">
-    <span class="md-ellipsis">
-      Action
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-modify-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. MODIFY ORDER
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. MODIFY ORDER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Action
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-fields_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-cancel-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. CANCEL ORDER
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. CANCEL ORDER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Action
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-fields_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -460,7 +253,7 @@
   
   
   <span class="md-ellipsis">
-    Zerodha Update
+    Zerodha
     
   </span>
   
@@ -490,167 +283,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#redis-publishing-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Redis Publishing Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-request-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Request Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-place-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. PLACE ORDER
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. PLACE ORDER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action" class="md-nav__link">
-    <span class="md-ellipsis">
-      Action
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-modify-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. MODIFY ORDER
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. MODIFY ORDER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Action
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-fields_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-cancel-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. CANCEL ORDER
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. CANCEL ORDER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#action_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Action
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-fields_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Fields
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -665,226 +297,439 @@
 
 
 
-<h1 id="order-requests-documentation">Order Requests Documentation</h1>
-<p>This document describes how to publish <strong>Place Order</strong>, <strong>Modify Order</strong>, and <strong>Cancel Order</strong>
-requests to the Adapter (Zerodha) via Redis.</p>
-<hr />
-<h2 id="redis-publishing-overview">Redis Publishing Overview</h2>
-<p>All requests are published to a Redis channel as JSON.</p>
+<h1 id="blitz-order-message-structure-requestresponse-specification">Blitz Order Message Structure &amp; Request–Response Specification</h1>
+<p>This document defines the <strong>standard broker-independent request and response format</strong> used by Blitz for order communication with broker adapters.</p>
+<p>It provides:</p>
 <ul>
-<li><strong>Channel</strong>: <code>adapter.channel</code></li>
-<li><strong>Message format</strong>: JSON</li>
-<li><strong>Publisher</strong>: Blitz</li>
-<li><strong>Consumer</strong>: Broker Adapter (Zerodha)</li>
+<li>Standard request format</li>
+<li>Standard response format</li>
+<li>Place / Modify / Cancel order structures</li>
+<li>OrderLog response structure</li>
+<li>Field definitions</li>
+<li>Status definitions</li>
+<li>Adapter responsibilities</li>
 </ul>
+<p>This specification is broker-agnostic and must be followed by all adapter implementations.</p>
 <hr />
-<h2 id="common-request-structure">Common Request Structure</h2>
+<h1 id="overview">Overview</h1>
+<p>Blitz uses a standardized message structure to communicate with broker adapters.</p>
+<p>All order operations follow a consistent flow:</p>
+<h2 id="order-flow">Order Flow</h2>
+<ol>
+<li>Blitz publishes request to adapter.</li>
+<li>Adapter converts request to broker format.</li>
+<li>Broker processes order.</li>
+<li>Adapter converts broker response to Blitz format.</li>
+<li>Blitz consumes standardized response.</li>
+</ol>
+<hr />
+<h1 id="request-structure">Request Structure</h1>
+<p>All order operations use a common request envelope.</p>
+<h2 id="common-request-format">Common Request Format</h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTION_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="request-fields">Request Fields</h2>
 <table>
 <thead>
 <tr>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>request_id</td>
+<td>Action</td>
 <td>string</td>
-<td>Unique request identifier</td>
-<td>Must be unique per request</td>
+<td>Request type (<code>PLACE_ORDER</code>, <code>MODIFY_ORDER</code>, <code>CANCEL_ORDER</code>)</td>
 </tr>
 <tr>
-<td>action</td>
+<td>TPOmsName</td>
 <td>string</td>
-<td>Action name</td>
-<td>Determines request type</td>
+<td>Target broker adapter</td>
 </tr>
 <tr>
-<td>data</td>
+<td>UserId</td>
+<td>string</td>
+<td>Unique user identifier</td>
+</tr>
+<tr>
+<td>UserName</td>
+<td>string</td>
+<td>User name</td>
+</tr>
+<tr>
+<td>Data</td>
 <td>object</td>
-<td>Payload for the action</td>
-<td>Mandatory</td>
+<td>Action-specific payload</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="1-place-order">1. PLACE ORDER</h2>
-<h3 id="action">Action</h3>
-<p>PLACE_ORDER</p>
-<h3 id="data-fields">Data Fields</h3>
+<h1 id="place-order-request">Place Order Request</h1>
+<h2 id="action">Action</h2>
+<p><code>PLACE_ORDER</code></p>
+<h2 id="structure">Structure</h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Harshit&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACCOUNT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VODAFONE IDEA LIMITED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LimitPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;StopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4576347291</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AlgoID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MOMENTUM_V1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;AlgoCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INTRADAY&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;IsFictiveOrder&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="place-order-fields">Place Order Fields</h2>
 <table>
 <thead>
 <tr>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>symbol</td>
+<td>Account</td>
 <td>string</td>
-<td>Exchange + symbol</td>
-<td>NSE</td>
+<td>Trading account identifier</td>
 </tr>
 <tr>
-<td>quantity</td>
-<td>int</td>
-<td>Total order quantity</td>
-<td>Required</td>
-</tr>
-<tr>
-<td>product</td>
+<td>ExchangeClientID</td>
 <td>string</td>
-<td>Product type</td>
-<td>MIS / CNC / NRML</td>
+<td>Client identifier</td>
 </tr>
 <tr>
-<td>tif</td>
+<td>ExchangeSegment</td>
 <td>string</td>
-<td>Time in force</td>
-<td>DAY / IOC</td>
+<td>Exchange segment</td>
 </tr>
 <tr>
-<td>price</td>
-<td>float</td>
-<td>Order price</td>
-<td>Required for LIMIT</td>
+<td>ExchangeInstrumentID</td>
+<td>number</td>
+<td>Exchange instrument identifier</td>
 </tr>
 <tr>
-<td>orderType</td>
+<td>SymbolName</td>
 <td>string</td>
-<td>Order type</td>
-<td>LIMIT / MARKET / SL / SL-M</td>
+<td>Trading symbol</td>
 </tr>
 <tr>
-<td>orderSide</td>
+<td>ExchangeInstrumentName</td>
 <td>string</td>
-<td>Order side</td>
-<td>BUY / SELL</td>
+<td>Full instrument name</td>
 </tr>
 <tr>
-<td>stopPrice</td>
-<td>float</td>
+<td>ProductType</td>
+<td>string</td>
+<td>Order product type (<code>MIS</code>, <code>CNC</code>, <code>NRML</code>)</td>
+</tr>
+<tr>
+<td>OrderType</td>
+<td>string</td>
+<td><code>MARKET</code>, <code>LIMIT</code>, <code>SL</code>, <code>SL-M</code></td>
+</tr>
+<tr>
+<td>OrderSide</td>
+<td>string</td>
+<td><code>BUY</code>, <code>SELL</code></td>
+</tr>
+<tr>
+<td>TimeInForce</td>
+<td>string</td>
+<td><code>DAY</code>, <code>IOC</code></td>
+</tr>
+<tr>
+<td>DisclosedQuantity</td>
+<td>number</td>
+<td>Quantity disclosed to market</td>
+</tr>
+<tr>
+<td>OrderQuantity</td>
+<td>number</td>
+<td>Total quantity</td>
+</tr>
+<tr>
+<td>LimitPrice</td>
+<td>number</td>
+<td>Limit price</td>
+</tr>
+<tr>
+<td>StopPrice</td>
+<td>number</td>
 <td>Trigger price</td>
-<td>0 if not applicable</td>
+</tr>
+<tr>
+<td>BlitzAppOrderID</td>
+<td>number</td>
+<td>Unique order ID</td>
+</tr>
+<tr>
+<td>AlgoID</td>
+<td>string</td>
+<td>Strategy identifier</td>
+</tr>
+<tr>
+<td>AlgoCategory</td>
+<td>string</td>
+<td>Strategy category</td>
+</tr>
+<tr>
+<td>IsFictiveOrder</td>
+<td>boolean</td>
+<td>Simulation flag</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example">Example</h3>
+<hr />
+<h1 id="modify-order-request">Modify Order Request</h1>
+<h2 id="action_1">Action</h2>
+<p><code>MODIFY_ORDER</code></p>
+<h2 id="structure_1">Structure</h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;place_001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLACE_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;BOID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID123&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;instrumentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23455666</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE|RELIANCE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;tif&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1560</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;orderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;stopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Harshit&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACCOUNT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NRML&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedOrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedTimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IOC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedOrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedLimitPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.15</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ModifiedStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567891</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_ID&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<hr />
-<h2 id="2-modify-order">2. MODIFY ORDER</h2>
-<h3 id="action_1">Action</h3>
-<p>MODIFY_ORDER</p>
-<h3 id="data-fields_1">Data Fields</h3>
+<h2 id="modify-order-fields">Modify Order Fields</h2>
 <table>
 <thead>
 <tr>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>order_id</td>
+<td>ExchangeOrderID</td>
 <td>string</td>
-<td>Broker order ID</td>
-<td>Mandatory</td>
+<td>Broker order identifier</td>
 </tr>
 <tr>
-<td>quantity</td>
-<td>int</td>
-<td>Modified quantity</td>
-<td>Optional</td>
+<td>ModifiedProductType</td>
+<td>string</td>
+<td>Updated product</td>
 </tr>
 <tr>
-<td>orderType</td>
+<td>ModifiedOrderType</td>
 <td>string</td>
-<td>Order type</td>
-<td>LIMIT / MARKET</td>
+<td>Updated order type</td>
 </tr>
 <tr>
-<td>validity</td>
+<td>ModifiedTimeInForce</td>
 <td>string</td>
-<td>Order validity</td>
-<td>DAY / IOC</td>
+<td>Updated validity</td>
+</tr>
+<tr>
+<td>ModifiedDisclosedQuantity</td>
+<td>number</td>
+<td>Updated disclosed quantity</td>
+</tr>
+<tr>
+<td>ModifiedOrderQuantity</td>
+<td>number</td>
+<td>Updated quantity</td>
+</tr>
+<tr>
+<td>ModifiedLimitPrice</td>
+<td>number</td>
+<td>Updated price</td>
+</tr>
+<tr>
+<td>ModifiedStopPrice</td>
+<td>number</td>
+<td>Updated trigger price</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example_1">Example</h3>
+<hr />
+<h1 id="cancel-order-request">Cancel Order Request</h1>
+<h2 id="action_2">Action</h2>
+<p><code>CANCEL_ORDER</code></p>
+<h2 id="structure_2">Structure</h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modify_001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MODIFY_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;BOID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID123&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;validity&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span>
+<span class="w">  </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Harshit&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACCOUNT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSECM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SymbolName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IDEA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4058284572</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_ID&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="3-cancel-order">3. CANCEL ORDER</h2>
-<h3 id="action_2">Action</h3>
-<p>CANCEL_ORDER</p>
-<h3 id="data-fields_2">Data Fields</h3>
+<h1 id="response-structure">Response Structure</h1>
+<p>All broker responses must be converted into the Blitz standardized response format.</p>
+<h2 id="common-response-envelope">Common Response Envelope</h2>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;MessageType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_EVENT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TPOmsName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BROKER_NAME&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;UserId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USER_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="response-fields">Response Fields</h2>
 <table>
 <thead>
 <tr>
 <th>Field</th>
 <th>Type</th>
 <th>Description</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>order_id</td>
+<td>MessageType</td>
 <td>string</td>
-<td>Broker order ID</td>
-<td>Mandatory</td>
+<td>Response event type</td>
+</tr>
+<tr>
+<td>TPOmsName</td>
+<td>string</td>
+<td>Broker adapter name</td>
+</tr>
+<tr>
+<td>UserId</td>
+<td>string</td>
+<td>User identifier</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>object</td>
+<td>Standard order response</td>
 </tr>
 </tbody>
 </table>
-<h3 id="example_2">Example</h3>
+<hr />
+<h1 id="standard-order-response-orderlog">Standard Order Response (OrderLog)</h1>
+<h2 id="structure_3">Structure</h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cancel_001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CANCEL_ORDER&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;BOID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOID123&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACCOUNT_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeClientID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CLIENT_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;BlitzAppOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4576347291</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeOrderID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORDER_ID&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeSegment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NSE&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeInstrumentID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3677697</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderSide&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ProductType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MIS&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;TimeInForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DAY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.25</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStopPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">11.0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NEW&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderAverageTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LeavesQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CumulativeQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderDisclosedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;OrderGeneratedDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExchangeTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastUpdateDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-08 15:23:46&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;CancelRejectReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedPrice&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastTradedQuantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;LastExecutionTransactTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ExecutionID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="notes">Notes</h2>
+<h1 id="order-status-values">Order Status Values</h1>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NEW</td>
+<td>Order accepted</td>
+</tr>
+<tr>
+<td>FILLED</td>
+<td>Fully executed</td>
+</tr>
+<tr>
+<td>PARTIALLY_FILLED</td>
+<td>Partially executed</td>
+</tr>
+<tr>
+<td>REPLACED</td>
+<td>Order modified</td>
+</tr>
+<tr>
+<td>CANCELLED</td>
+<td>Order cancelled</td>
+</tr>
+<tr>
+<td>REJECTED</td>
+<td>Order rejected</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="adapter-responsibilities">Adapter Responsibilities</h1>
 <ul>
-<li>All enum values must be <strong>UPPERCASE</strong></li>
-<li><code>order_id</code> refers to <strong>ExchangeOrderId</strong> from broker</li>
-<li>Adapter maps broker response into <code>OrderLog</code></li>
-<li>Errors / rejects are published back asynchronously</li>
+<li>Convert broker responses into Blitz format</li>
+<li>Normalize order status values</li>
+<li>Populate all fields where possible</li>
+<li>Default missing numeric values to <code>0</code></li>
+<li>Default missing strings to <code>""</code> or <code>null</code></li>
+<li>Maintain consistent timestamp format</li>
+<li>Ensure request and response structure consistency</li>
 </ul>
+<hr />
 
 
 
