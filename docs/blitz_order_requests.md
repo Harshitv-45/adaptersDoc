@@ -1,131 +1,285 @@
-# Order Requests Documentation
+# Blitz Order Message Structure & Request–Response Specification
 
-This document describes how to publish **Place Order**, **Modify Order**, and **Cancel Order**
-requests to the Adapter (Zerodha) via Redis.
+This document defines the **standard broker-independent request and response format** used by Blitz for order communication with broker adapters.
 
----
+It provides:
 
-## Redis Publishing Overview
+- Standard request format
+- Standard response format
+- Place / Modify / Cancel order structures
+- OrderLog response structure
+- Field definitions
+- Status definitions
+- Adapter responsibilities
 
-All requests are published to a Redis channel as JSON.
-
-- **Channel**: `adapter.channel`
-- **Message format**: JSON
-- **Publisher**: Blitz
-- **Consumer**: Broker Adapter (Zerodha)
-
----
-
-## Common Request Structure
-
-| Field | Type | Description | Notes |
-|------|------|------------|------|
-| request_id | string | Unique request identifier | Must be unique per request |
-| action | string | Action name | Determines request type |
-| data | object | Payload for the action | Mandatory |
+This specification is broker-agnostic and must be followed by all adapter implementations.
 
 ---
 
-## 1. PLACE ORDER
+# Overview
 
-### Action
-PLACE_ORDER
+Blitz uses a standardized message structure to communicate with broker adapters.
 
-### Data Fields
+All order operations follow a consistent flow:
 
-| Field | Type | Description | Notes |
-|------|------|------------|------|
-| symbol | string | Exchange + symbol | NSE|RELIANCE |
-| quantity | int | Total order quantity | Required |
-| product | string | Product type | MIS / CNC / NRML |
-| tif | string | Time in force | DAY / IOC |
-| price | float | Order price | Required for LIMIT |
-| orderType | string | Order type | LIMIT / MARKET / SL / SL-M |
-| orderSide | string | Order side | BUY / SELL |
-| stopPrice | float | Trigger price | 0 if not applicable |
+## Order Flow
 
-### Example
+1. Blitz publishes request to adapter.
+2. Adapter converts request to broker format.
+3. Broker processes order.
+4. Adapter converts broker response to Blitz format.
+5. Blitz consumes standardized response.
+
+---
+
+# Request Structure
+
+All order operations use a common request envelope.
+
+## Common Request Format
 
 ```json
 {
-  "request_id": "place_001",
-  "action": "PLACE_ORDER",
-  "data": {
-    "BOID": "BOID123",
-    "instrumentId": 23455666,
-    "symbol": "NSE|RELIANCE",
-    "quantity": 1,
-    "product": "MIS",
-    "tif": "DAY",
-    "price": 1560,
-    "orderType": "LIMIT",
-    "orderSide": "BUY",
-    "stopPrice": 0
+  "Action": "ACTION_NAME",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "USER_ID",
+  "UserName": "USER_NAME",
+  "Data": {}
+}
+```
+
+## Request Fields
+
+| Field | Type | Description |
+|---|---|---|
+| Action | string | Request type (`PLACE_ORDER`, `MODIFY_ORDER`, `CANCEL_ORDER`) |
+| TPOmsName | string | Target broker adapter |
+| UserId | string | Unique user identifier |
+| UserName | string | User name |
+| Data | object | Action-specific payload |
+
+---
+
+# Place Order Request
+
+## Action
+`PLACE_ORDER`
+
+## Structure
+
+```json
+{
+  "Action": "PLACE_ORDER",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "ABC123",
+  "UserName": "Harshit",
+  "Data": {
+    "Account": "ACCOUNT_ID",
+    "ExchangeClientID": "CLIENT_ID",
+    "ExchangeSegment": "NSECM",
+    "ExchangeInstrumentID": 1234,
+    "SymbolName": "IDEA",
+    "ExchangeInstrumentName": "VODAFONE IDEA LIMITED",
+    "ProductType": "MIS",
+    "OrderType": "LIMIT",
+    "OrderSide": "BUY",
+    "TimeInForce": "DAY",
+    "DisclosedQuantity": 10,
+    "OrderQuantity": 100,
+    "LimitPrice": 11.25,
+    "StopPrice": 11.00,
+    "BlitzAppOrderID": 4576347291,
+    "AlgoID": "MOMENTUM_V1",
+    "AlgoCategory": "INTRADAY",
+    "IsFictiveOrder": false
+  }
+}
+```
+
+## Place Order Fields
+
+| Field | Type | Description |
+|---|---|---|
+| Account | string | Trading account identifier |
+| ExchangeClientID | string | Client identifier |
+| ExchangeSegment | string | Exchange segment |
+| ExchangeInstrumentID | number | Exchange instrument identifier |
+| SymbolName | string | Trading symbol |
+| ExchangeInstrumentName | string | Full instrument name |
+| ProductType | string | Order product type (`MIS`, `CNC`, `NRML`) |
+| OrderType | string | `MARKET`, `LIMIT`, `SL`, `SL-M` |
+| OrderSide | string | `BUY`, `SELL` |
+| TimeInForce | string | `DAY`, `IOC` |
+| DisclosedQuantity | number | Quantity disclosed to market |
+| OrderQuantity | number | Total quantity |
+| LimitPrice | number | Limit price |
+| StopPrice | number | Trigger price |
+| BlitzAppOrderID | number | Unique order ID |
+| AlgoID | string | Strategy identifier |
+| AlgoCategory | string | Strategy category |
+| IsFictiveOrder | boolean | Simulation flag |
+
+---
+
+# Modify Order Request
+
+## Action
+`MODIFY_ORDER`
+
+## Structure
+
+```json
+{
+  "Action": "MODIFY_ORDER",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "ABC123",
+  "UserName": "Harshit",
+  "Data": {
+    "Account": "ACCOUNT_ID",
+    "ExchangeClientID": "CLIENT_ID",
+    "ExchangeSegment": "NSECM",
+    "ExchangeInstrumentID": 1234,
+    "SymbolName": "IDEA",
+    "ModifiedProductType": "NRML",
+    "ModifiedOrderType": "LIMIT",
+    "ModifiedTimeInForce": "IOC",
+    "ModifiedDisclosedQuantity": 10,
+    "ModifiedOrderQuantity": 150,
+    "ModifiedLimitPrice": 11.15,
+    "ModifiedStopPrice": 11.10,
+    "BlitzAppOrderID": 1234567891,
+    "ExchangeOrderID": "ORDER_ID"
+  }
+}
+```
+
+## Modify Order Fields
+
+| Field | Type | Description |
+|---|---|---|
+| ExchangeOrderID | string | Broker order identifier |
+| ModifiedProductType | string | Updated product |
+| ModifiedOrderType | string | Updated order type |
+| ModifiedTimeInForce | string | Updated validity |
+| ModifiedDisclosedQuantity | number | Updated disclosed quantity |
+| ModifiedOrderQuantity | number | Updated quantity |
+| ModifiedLimitPrice | number | Updated price |
+| ModifiedStopPrice | number | Updated trigger price |
+
+---
+
+# Cancel Order Request
+
+## Action
+`CANCEL_ORDER`
+
+## Structure
+
+```json
+{
+  "Action": "CANCEL_ORDER",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "ABC123",
+  "UserName": "Harshit",
+  "Data": {
+    "Account": "ACCOUNT_ID",
+    "ExchangeClientID": "CLIENT_ID",
+    "ExchangeSegment": "NSECM",
+    "ExchangeInstrumentID": 3677697,
+    "SymbolName": "IDEA",
+    "BlitzAppOrderID": 4058284572,
+    "ExchangeOrderID": "ORDER_ID"
   }
 }
 ```
 
 ---
 
-## 2. MODIFY ORDER
+# Response Structure
 
-### Action
-MODIFY_ORDER
+All broker responses must be converted into the Blitz standardized response format.
 
-### Data Fields
-
-| Field | Type | Description | Notes |
-|------|------|------------|------|
-| order_id | string | Broker order ID | Mandatory |
-| quantity | int | Modified quantity | Optional |
-| orderType | string | Order type | LIMIT / MARKET |
-| validity | string | Order validity | DAY / IOC |
-
-### Example
+## Common Response Envelope
 
 ```json
 {
-  "request_id": "modify_001",
-  "action": "MODIFY_ORDER",
-  "data": {
-    "BOID": "BOID123",
-    "quantity": 2,
-    "orderType": "LIMIT",
-    "validity": "DAY"
-  }
+  "MessageType": "ORDER_EVENT",
+  "TPOmsName": "BROKER_NAME",
+  "UserId": "USER_ID",
+  "Data": {}
+}
+```
+
+## Response Fields
+
+| Field | Type | Description |
+|---|---|---|
+| MessageType | string | Response event type |
+| TPOmsName | string | Broker adapter name |
+| UserId | string | User identifier |
+| Data | object | Standard order response |
+
+---
+
+# Standard Order Response (OrderLog)
+
+## Structure
+
+```json
+{
+  "SequenceNumber": 0,
+  "Account": "ACCOUNT_ID",
+  "ExchangeClientID": "CLIENT_ID",
+  "BlitzAppOrderID": 4576347291,
+  "ExchangeOrderID": "ORDER_ID",
+  "ExchangeSegment": "NSE",
+  "ExchangeInstrumentID": 3677697,
+  "OrderSide": "BUY",
+  "OrderType": "LIMIT",
+  "ProductType": "MIS",
+  "TimeInForce": "DAY",
+  "OrderPrice": 11.25,
+  "OrderQuantity": 100,
+  "OrderStopPrice": 11.0,
+  "OrderStatus": "NEW",
+  "OrderAverageTradedPrice": 0,
+  "LeavesQuantity": 100,
+  "CumulativeQuantity": 0,
+  "OrderDisclosedQuantity": 10,
+  "OrderGeneratedDateTime": "2026-01-08 15:23:46",
+  "ExchangeTransactTime": "2026-01-08 15:23:46",
+  "LastUpdateDateTime": "2026-01-08 15:23:46",
+  "CancelRejectReason": null,
+  "LastTradedPrice": 0,
+  "LastTradedQuantity": 0,
+  "LastExecutionTransactTime": null,
+  "ExecutionID": ""
 }
 ```
 
 ---
 
-## 3. CANCEL ORDER
+# Order Status Values
 
-### Action
-CANCEL_ORDER
-
-### Data Fields
-
-| Field | Type | Description | Notes |
-|------|------|------------|------|
-| order_id | string | Broker order ID | Mandatory |
-
-### Example
-
-```json
-{
-  "request_id": "cancel_001",
-  "action": "CANCEL_ORDER",
-  "data": {
-    "BOID": "BOID123",
-  }
-}
-```
+| Status | Meaning |
+|---|---|
+| NEW | Order accepted |
+| FILLED | Fully executed |
+| PARTIALLY_FILLED | Partially executed |
+| REPLACED | Order modified |
+| CANCELLED | Order cancelled |
+| REJECTED | Order rejected |
 
 ---
 
-## Notes
+# Adapter Responsibilities
 
-- All enum values must be **UPPERCASE**
-- `order_id` refers to **ExchangeOrderId** from broker
-- Adapter maps broker response into `OrderLog`
-- Errors / rejects are published back asynchronously
+- Convert broker responses into Blitz format
+- Normalize order status values
+- Populate all fields where possible
+- Default missing numeric values to `0`
+- Default missing strings to `""` or `null`
+- Maintain consistent timestamp format
+- Ensure request and response structure consistency
+
+---

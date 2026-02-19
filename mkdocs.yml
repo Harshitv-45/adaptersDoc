@@ -1,4 +1,4 @@
-site_name: Blitz Broker Adapter Documentation
+site_name: Adapter Documentation
 
 theme:
   name: material
@@ -10,8 +10,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Blitz Adapter Structure: blitz_adapter_structure.md
-  - Blitz Order Requests: blitz_order_requests.md
+  - Requests & Response : blitz_order_requests.md
   - Zerodha: zerodha.md
 
 extra_css:
